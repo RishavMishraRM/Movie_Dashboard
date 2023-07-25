@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="src.css">
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body onLoad="printing_table();">
+        <header></header>
+        <div class="header" style="color: #FFFFFF; font-size:120%;"><br>Movie Advance Search<br><br></b>
+        </div>
+        
+        <p class=p1>Movie Name:<form class="form1" name="test">
+            <input type="text" name="search" >
+            </form></p>
+            <p class=p2>Release Year:<form class="form2" name="test">
+                <input type="date" name="search" placeholder="">
+                </form></p>
+                <p class=p3>Director Name:<form class="form3" name="test" placeholder=">Director Name">
+                    <input type="text" name="search" >
+                    </form></p>
+                    <p class=p4>Language:<form class="form4" name="test">
+                        <input type="text" name="search" >
+                        </form></p>
+        <search_result>
+            <div class="search_result"></div>
+        </search_result>
+        <table border="0" class="myTable">
+            <button class="modal-open button button1 relative" data-modal="modal1"></b> Search</button>
+            <button class="modal-open button button1 relative" data-modal="modal2">Reset</button>
+        
+             <!-- Modals -->
+             
+             <div class="modal" id="modal2">
+                <div class="modal-content">
+                    <div class="modal-header">Reset record(s)
+                        <button class="icon modal-close"><i class="material-icons">close</i></button>
+                    </div>
+                    <hr size="3" width="100%" color="black">
+                    <div class="model-body">You'll lose all your record(s) after this action. We can't
+                        recover them once you delete.<br><br>Are you sure you want to permanently delete them?
+                    </div>
+                    <hr size="3" width="100%" color="black">
+                    <div class="model-footer"><button class="link modal-close">Close</button></div>
+                    <div class="model-footer"><button class="link modal-close">Confirm</button></div>
+                </div>
+            </div>
+
+
+            <div class="modal" id="modal3">
+                <div class="modal-content">
+                    <div class="modal-header">Add Film
+                        <button class="icon modal-close"><i class="material-icons">close</i></button>
+                    </div>
+                    <hr size="3" width="100%" color="black">
+                    <!-- <div class="model-body">Add Movie : 
+                    </div> -->
+                    <form class="" name="test">
+                        Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <form class="" name="test">
+                        Release Year: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="search">
+                    </form>
+                    <form class="" name="test">
+                        Special Feature: <input type="text" name="search">
+                    </form>
+                    <form class="" name="test">
+                        Rating: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <form class="" name="test">
+                        Language: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search">
+                    </form>
+                    <form class="" name="test">
+                        Director Name: &nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <form class="" name="test">
+                        Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <hr size="3" width="100%" color="black">
+                    <div class="model-footer"><button class="link modal-close">Add Movie</button></div>
+                </div>
+            </div>
+
+            <div class="modal" id="modal4">
+                <div class="modal-content">
+                    <div class="modal-header">Edit Movie
+                        <button class="icon modal-close"><i class="material-icons">close</i></button>
+                    </div>
+                    <hr size="3" width="100%" color="black">
+                    <form class="" name="test">
+                        Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <form class="" name="test">
+                        Release Year: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="search">
+                    </form>
+                    <form class="" name="test">
+                        Special Feature: <input type="text" name="search">
+                    </form>
+                    <form class="" name="test">
+                        Rating: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <form class="" name="test">
+                        Language: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search">
+                    </form>
+                    <form class="" name="test">
+                        Director Name: &nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <form class="" name="test">
+                        Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" >
+                    </form>
+                    <hr size="4" width="100%" color="black">
+                    <div class="model-footer"><button class="link modal-close">Cancel</button></div>
+                    <div class="model-footer"><button class="link modal-close">Reset</button></div>
+                    <div class="model-footer"><button class="link modal-close">Save</button></div>
+
+                </div>
+            </div>
+
+            <div class="modal" id="modal5">
+                <div class="modal-content">
+                    <div class="modal-header">Delete record(s)
+                        <button class="icon modal-close"><i class="material-icons">close</i></button>
+                    </div>
+                    <hr size="3" width="100%" color="black">
+                    <div class="model-body">You'll lose your record(s) after this action. We can't
+                        recover them once you delete.<br><br>Are you sure you want to permanently delete them?
+                    </div>
+                    <hr size="3" width="100%" color="black">
+                    <div class="model-footer"><button class="link modal-close">Close</button></div>
+                    <div class="model-footer"><button class="link modal-close">Delete</button></div>
+                </div>
+            </div>
+
+
+        </table>
+        <div class="header disk" style="color: #FFFFFF; font-size:120%;"><br>Movie Grid<br><br></b>
+        </div>
+        <div class="header"></div>
+        <table class="mytable">
+        <tr class="myHeadings">
+            <th class="padding"><b></b></th>
+            <!-- <td><input type="checkbox" /></td> -->
+            <th class="padding"><b> Title &emsp;</b></th>
+            <th class="padding"><b> Description &emsp;</b></th>
+            <th class="padding"><b> Release Year &emsp;&emsp;</b></th>
+            <th class="padding"><b> Language &emsp;</b></th>
+            <th class="padding"><b> Director &emsp;&emsp;</b></th>
+            <th class="padding"><b> Rating </b></th>
+            <th class="padding"><b> Special Feat... </b></th>
+        </tr>
+        <tr >
+            <td><input type="checkbox" /></td>
+            <td class="Val" id="00"></td>
+            <td class="Val" id="01"></td>
+            <td class="Val" id="02"></td>
+            <td class="Val" id="03"></td>
+            <td class="Val" id="04"></td>
+            <td class="Val" id="05"></td>
+            <td class="Val" id="06"></td>
+        </tr>
+        <tr">
+            <td><input type="checkbox" /></td>
+            <td class="Val" id="10"></td>
+            <td class="Val" id="11"></td>
+            <td class="Val" id="12"></td>
+            <td class="Val" id="13"></td>
+            <td class="Val" id="14"></td>
+            <td class="Val" id="15"></td>
+            <td class="Val" id="16"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td class="Val" id="20"></td>
+            <td class="Val" id="21"></td>
+            <td class="Val" id="22"></td>
+            <td class="Val" id="23"></td>
+            <td class="Val" id="24"></td>
+            <td class="Val" id="25"></td>
+            <td class="Val" id="26"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td class="Val" id="30"></td>
+            <td class="Val" id="31"></td>
+            <td class="Val" id="32"></td>
+            <td class="Val" id="33"></td>
+            <td class="Val" id="34"></td>
+            <td class="Val" id="35"></td>
+            <td class="Val" id="36"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td class="Val" id="40"></td>
+            <td class="Val" id="41"></td>
+            <td class="Val" id="42"></td>
+            <td class="Val" id="43"></td>
+            <td class="Val" id="44"></td>
+            <td class="Val" id="45"></td>
+            <td class="Val" id="46"></td>
+        </tr>
+        </table>
+</div>
+
+<div class="rightsidebar"></div>
+<table border="0" class="myTable">
+    <div class="tap"><button class="modal-open button button1 relative " data-modal="modal3">+Add</button></div>
+    <div class="sap"><button class="modal-open button button1 relative " data-modal="modal4">Edit</button></div>
+    <div class="zap"><button class="modal-open button button1 relative " data-modal="modal5">Delete</button></div>
+<footer></footer>
+
+<script>
+    var modalBtns = document.querySelectorAll(".modal-open");
+
+    modalBtns.forEach(function (btn) {
+        btn.onclick = function () {
+            var modal = btn.getAttribute("data-modal");
+
+            document.getElementById(modal).style.display = "block";
+        };
+    });
+    var closeBtns = document.querySelectorAll(".modal-close");
+    closeBtns.forEach(function (btn) {
+        btn.onclick = function () {
+            var modal = (btn.closest(".modal").style.display = "none");
+        };
+    });
+    window.onclick = function (e) {
+        if (e.target.className === "modal") {
+            e.target.style.display = "none"
+        }
+    }
+</script> 
+</body>
+</html>
